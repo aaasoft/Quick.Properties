@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.4;net40</TargetFrameworks>
+    <Authors>scbeta</Authors>
+    <Company />
+    <Description>A simple libary for handle properties file.</Description>
+    <PackageProjectUrl>https://github.com/aaasoft/Quick.Properties</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/aaasoft/Quick.Properties/master/LICENSE</PackageLicenseUrl>
+    <Version>1.0.0</Version>
+  </PropertyGroup>  
+</Project>
