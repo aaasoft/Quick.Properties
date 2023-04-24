@@ -12,8 +12,8 @@ namespace Quick.Properties.Utils
         {
             IDictionary<String, String> dict = new Dictionary<String, String>();
             content = parse(content, folderPath, new HashSet<string>(notAllowFiles));
-            //参考正则表达式: ^(\s|\r|\n)*(?'key'[^#][^\s]*?)\s*=\s*(?'value'.*?)(\s|\r|\n)*$
-            Regex regex = new Regex(@"^(\s|\r|\n)*(?'key'[^#][^\s]*?)\s*=\s*(?'value'.*?)(\s|\r|\n)*$", RegexOptions.Multiline);
+            //参考正则表达式: ^(\s|\r|\n)*(?'key'[^#][^\s]*?)[ \t]*=[ \t]*(?'value'.*?)(\s|\r|\n)*$
+            Regex regex = new Regex(@"^(\s|\r|\n)*(?'key'[^#][^\s]*?)[ \t]*=[ \t]*(?'value'.*?)(\s|\r|\n)*$", RegexOptions.Multiline);
             foreach (Match match in regex.Matches(content))
             {
                 String key = match.Groups["key"].Value;
@@ -29,8 +29,8 @@ namespace Quick.Properties.Utils
             content = content.Replace("\\\r\n", "").Replace("\\\r", "").Replace("\\\n", "");
 
             //解析include指令
-            //正则表达式：^(\s|\r|\n)*?include\s*=\s*(?'fileName'.*?)(\s|\r|\n)*?$
-            Regex regex = new Regex(@"^(\s|\r|\n)*?include\s*=\s*(?'fileName'.*?)(\s|\r|\n)*?$", RegexOptions.Multiline);
+            //正则表达式：^(\s|\r|\n)*?include[ \t]*=[ \t]*(?'fileName'.*?)(\s|\r|\n)*?$
+            Regex regex = new Regex(@"^(\s|\r|\n)*?include[ \t]*=[ \t]*(?'fileName'.*?)(\s|\r|\n)*?$", RegexOptions.Multiline)
             content = regex.Replace(content, match =>
              {
                  var fileName = match.Groups["fileName"].Value;

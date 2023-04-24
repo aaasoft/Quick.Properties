@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.4;net40</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>scbeta</Authors>
     <Company />
     <Description>A simple libary for handle properties file.</Description>
