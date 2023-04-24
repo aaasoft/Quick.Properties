@@ -30,7 +30,7 @@ namespace Quick.Properties.Utils
 
             //解析include指令
             //正则表达式：^(\s|\r|\n)*?include[ \t]*=[ \t]*(?'fileName'.*?)(\s|\r|\n)*?$
-            Regex regex = new Regex(@"^(\s|\r|\n)*?include[ \t]*=[ \t]*(?'fileName'.*?)(\s|\r|\n)*?$", RegexOptions.Multiline)
+            Regex regex = new Regex(@"^(\s|\r|\n)*?include[ \t]*=[ \t]*(?'fileName'.*?)(\s|\r|\n)*?$", RegexOptions.Multiline);
             content = regex.Replace(content, match =>
              {
                  var fileName = match.Groups["fileName"].Value;
